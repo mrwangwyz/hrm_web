@@ -2,12 +2,13 @@ import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import NotFound from './views/404.vue'
 import Home from './views/Home.vue'
-import Main from './views/Main.vue'
 import Table from './views/nav1/Table.vue'
 import Department from './views/itsource/department.vue'
+import CourseType from './views/course/courseType.vue'
+import Course from './views/course/course.vue'
+import TenantType from './views/tenant/tenantType.vue'
+import Tenant from './views/tenant/tenant.vue'
 import Role from './views/itsource/role.vue'
-import Form from './views/nav1/Form.vue'
-import user from './views/nav1/user.vue'
 import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 import Page6 from './views/nav3/Page6.vue'
@@ -57,13 +58,21 @@ let routes = [
     {
         path: '/',
         component: Home,
-        name: '导航一',
+        name: '课程中心',
         iconCls: 'el-icon-message',//图标样式class
         children: [
-            { path: '/main', component: Main, name: '主页', hidden: true },
-            { path: '/table', component: Table, name: 'Table' },
-            { path: '/form', component: Form, name: 'Form' },
-            { path: '/user', component: user, name: '列表' },
+            { path: '/courseType', component: CourseType, name: '课程类型' },
+            { path: '/course', component: Course, name: '课程' },
+        ]
+    },
+    {
+        path: '/',
+        component: Home,
+        name: '机构管理',
+        iconCls: 'el-icon-message',//图标样式class
+        children: [
+            { path: '/tenantType', component: TenantType, name: '机构类型' },
+            { path: '/tenant', component: Tenant, name: '机构管理' },
         ]
     },
     {
